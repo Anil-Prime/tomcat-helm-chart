@@ -1,9 +1,5 @@
 replicaCount: 1
 
-serviceAccount:
-  create: true  # Or false, depending on whether you want to create the service account
-
-
 # Container image configuration
 image:
   repository: docker.io/anilkumarprime/tomcatui
