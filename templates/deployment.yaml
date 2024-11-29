@@ -20,7 +20,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: {{ .Values.service.port }}
+              containerPort: 8080  # Set container port to 8080 (Tomcat default)
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
