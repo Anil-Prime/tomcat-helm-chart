@@ -10,7 +10,7 @@ image:
 service:
   type: NodePort
   port: 80
-  targetPort: 8080
+  targetPort: 8080  # Ensure this is the correct port
 
 # Resource limits and requests
 resources:
