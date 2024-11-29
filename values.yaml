@@ -21,13 +21,18 @@ resources:
     cpu: "200m"
     memory: "256Mi"
 
+# Service Account configuration
+serviceAccount:
+  create: true  # Change to false if you don't want to create a service account
+  name: ""      # Optional, if you want to specify an existing service account
+
 # Enable or disable ingress
 ingress:
   enabled: false
 
 # Enable or disable autoscaling
 autoscaling:
-  enabled: false  # Change to true to enable autoscaling
+  enabled: false
   minReplicas: 1
   maxReplicas: 3
   targetCPUUtilizationPercentage: 80
