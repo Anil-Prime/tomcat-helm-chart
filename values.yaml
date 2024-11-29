@@ -8,11 +8,11 @@ image:
 
 # Service configuration
 service:
-  type: LoadBalancer   # Exposes the service externally
-  port: 80             # The port on which the service is exposed
-  targetPort: 8080     # The port on the container to which the traffic is forwarded
+  type: LoadBalancer
+  port: 80
+  targetPort: 8080
 
-# Resource limits and requests (optional, good practice)
+# Resource limits and requests
 resources:
   requests:
     cpu: "100m"
@@ -20,3 +20,19 @@ resources:
   limits:
     cpu: "200m"
     memory: "256Mi"
+
+# Enable or disable ingress
+ingress:
+  enabled: false
+
+# Enable or disable autoscaling
+autoscaling:
+  enabled: false  # Change to true to enable autoscaling
+  minReplicas: 1
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 80
+
+# Optional node selectors, tolerations, and affinity
+nodeSelector: {}
+tolerations: []
+affinity: {}
