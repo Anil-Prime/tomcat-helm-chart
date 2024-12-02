@@ -11,7 +11,7 @@ image:
 service:
   type: NodePort
   port: 80
-  targetPort: 8068  # Updated to new target port
+  targetPort: 8080  # Updated to new target port
   nodePort: null    # You can specify a static NodePort if required (optional)
 
 # Resource limits and requests
