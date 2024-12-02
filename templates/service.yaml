@@ -8,7 +8,7 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 8068 # Directly reference the correct target port
+      targetPort: 8080 # Directly reference the correct target port
       protocol: TCP
       name: http
   selector:
