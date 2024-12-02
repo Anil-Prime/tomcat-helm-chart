@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "tomcat.fullname" . }}
-  namespace: {{ .Values.namespace}}
   labels:
     {{- include "tomcat.labels" . | nindent 4 }}
 spec:
