@@ -1,4 +1,8 @@
+# Replica count configuration
 replicaCount: 2
+
+# Namespace configuration
+namespace: tomcat
 
 # Container image configuration
 image:
@@ -10,7 +14,8 @@ image:
 service:
   type: NodePort
   port: 80
-  targetPort: 8080  # Ensure this is the correct port
+  targetPort: 8068  # Updated to new target port
+  nodePort: null    # You can specify a static NodePort if required (optional)
 
 # Resource limits and requests
 resources:
