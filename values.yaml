@@ -1,9 +1,6 @@
 # Replica count configuration
 replicaCount: 2
 
-# Namespace configuration
-namespace: tomcat
-
 # Container image configuration
 image:
   repository: docker.io/anilkumarprime/tomcatui
