@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "tomcat.fullname" . }}
+  namespace: {{ .Values.namespace}}
   labels:
     {{- include "tomcat.labels" . | nindent 4 }}
 spec:
@@ -20,7 +21,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - name: http
-              containerPort: 8080  # Set container port to 8080 (Tomcat default)
+              containerPort: 8068  # Set container port to 8080 (Tomcat default)
               protocol: TCP
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
