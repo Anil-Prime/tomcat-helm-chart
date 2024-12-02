@@ -2,13 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ include "tomcat.fullname" . }}
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "tomcat.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: 8080  # Directly reference the correct target port
+      targetPort: 8068 # Directly reference the correct target port
       protocol: TCP
       name: http
   selector:
